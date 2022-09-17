@@ -1,12 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useComments = () => {
     const [comments, setComments] = useState([]);
 
   useEffect(() => {
     const fetchComments = async () => {
-      const result = await axios.get("http://localhost:5000/comments");
+      const result = await axios.get("https://stark-waters-99660.herokuapp.com/comments");
       setComments(result.data);
     };
     fetchComments();

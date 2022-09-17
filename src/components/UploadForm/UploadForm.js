@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { set, useForm } from "react-hook-form";
 import axios from "axios";
+import React from "react";
+import { useForm } from "react-hook-form";
 import useComments from "../../hooks/useComments";
 
 const UploadForm = () => {
@@ -35,7 +35,7 @@ const UploadForm = () => {
     if (uidexist && bodyexist && postidexist && unameexist) {
       // console.log("iside update");
       axios
-        .put("http://localhost:5000/update", {
+        .put("https://stark-waters-99660.herokuapp.com/update", {
           uid: data.uid,
           body: data.comment,
           username: data.uname,
@@ -47,7 +47,7 @@ const UploadForm = () => {
     } else {
       // console.log("inside insert");
       axios
-        .post("http://localhost:5000/insert", {
+        .post("https://stark-waters-99660.herokuapp.com/insert", {
           uid: data.uid,
           body: data.comment,
           username: data.uname,
